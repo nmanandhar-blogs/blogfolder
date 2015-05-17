@@ -1,0 +1,7 @@
+#ignore idea project files
+.idea/
+.iml
+
+#ignore compiled class files and target directory
+target/
+*.class
