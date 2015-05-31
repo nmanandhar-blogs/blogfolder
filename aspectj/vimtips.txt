@@ -1,0 +1,5 @@
+
+So both c and s do the same thing in visual mode.
+Also, in general, if you want to know what a key does in something other than
+normal mode, just prefix the key with the first letter of the mode and a
+underscore.skllllllll and find out what the s key does in visual mode.

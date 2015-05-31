@@ -5,3 +5,7 @@
 #ignore compiled class files and target directory
 target/
 *.class
+
+
+#vim temorary files
+*~

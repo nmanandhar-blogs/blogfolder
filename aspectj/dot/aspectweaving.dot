@@ -1,0 +1,8 @@
+digraph asepct{
+  node[shape=rectangle]  
+  loggingAspect[shape = none, label="LoggingAspect.aj"]
+
+
+  
+
+}
