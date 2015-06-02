@@ -52,7 +52,7 @@
 
         If you define a variable in Vim without specificying which scope it
         belongs to , then it belongs as default to global scope- unless it is 
-        defined in a function which causes it to be available int he function
+        defined in a function which causes it to be available in the function
 
         Following 8 scopes are available
         v: vim predefined global scope
@@ -61,7 +61,7 @@
         t: Tab scope - only available in the Vim tab where it was defined 
         w: Window scope - only available to current Vim window 
         l: Function scope local to the function it is defned in 
-        s: Sourced file scope - local to a Vim script loaded using :source 
+        s: Sourced file scope - local to a sourced Vim script
         a: Argument scope - used in arguments to functions
 
         let g:sum=0
@@ -76,6 +76,12 @@
         "this should return 7
         echo g:sum
 
+The scope name by itself can be used as a |Dictionary|.  For example, to
+delete all script-local variables: >
+	:for k in keys(s:)
+	:    unlet s:[k]
+	:endfor
+
 <br/>
 Conditions
   if condition 
@@ -84,3 +90,16 @@ Conditions
     some other code
   endif 
 
+##Functions
+Vimscript functions must start with a capital letter if they are unscoped.
+Even if you do add a scope to a function you may as well capitalize the first
+letter of function names anyway. Most Vimscript coders seem to do it
+
+There are two different ways of calling functions
+* directory
+    :call HelloWorld()
+* In Expression
+    :echom HelloWorld()
+
+**Note** If a vimscript doesn't explicitly return a value, it implicitly returns
+a 0 . this can be useful
